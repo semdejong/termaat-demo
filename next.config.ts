@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { htmlMigration } from "./lib/migration";
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
@@ -22,6 +23,13 @@ const nextConfig: NextConfig = {
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
     ];
+  },
+  async redirects() {
+    return htmlMigration.map((item) => ({
+      source: item.source,
+      destination: item.destination,
+      permanent: false,
+    }));
   },
 };
 

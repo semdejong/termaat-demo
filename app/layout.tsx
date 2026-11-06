@@ -1,14 +1,31 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import { Barlow_Condensed, Source_Sans_3 } from "next/font/google";
 import type { CSSProperties } from "react";
 import "./globals.css";
 import { content } from "@/content";
 import SleadsBadge from "@/components/SleadsBadge";
+import { SiteHeader } from "@/components/site/Header";
+import { SiteFooter } from "@/components/site/Footer";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const barlow = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-barlow",
+  display: "swap",
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-source",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: content.seo.title,
+  title: {
+    default: content.seo.title,
+    template: "%s · SchilderTERMAAT",
+  },
   description: content.seo.description,
   robots: {
     index: false,
@@ -21,7 +38,6 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { themeColor: content.colors.primary };
 
-// Sleads demo-analytics (cookieloos). Events tellen alleen voor slugs die via POST /api/demos geregistreerd zijn.
 const TRACKER_SRC = "https://sleads-demo-analytics.vercel.app/t.js";
 const TRACKER_ENDPOINT = "https://basic-tiger-117.convex.site/track";
 
@@ -37,12 +53,39 @@ const themeVars = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang={content.seo.lang} style={themeVars} className={`${geistSans.variable} h-full scroll-smooth antialiased`}>
+    <html
+      lang={content.seo.lang}
+      style={themeVars}
+      className={`${barlow.variable} ${sourceSans.variable} h-full antialiased`}
+    >
       <head>
-        <script async src={TRACKER_SRC} data-demo={content.slug} data-endpoint={TRACKER_ENDPOINT} />
+        <script defer src="https://app.webstekk.nl/t.js" />
+        <script
+          async
+          src={TRACKER_SRC}
+          data-demo={content.slug}
+          data-endpoint={TRACKER_ENDPOINT}
+        />
       </head>
-      <body className="min-h-full flex flex-col">
-        {children}
+      <body className="min-h-full bg-muted text-foreground">
+        <a
+          href="#inhoud"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[80] focus:bg-background focus:px-4 focus:py-3 focus:text-brand"
+        >
+          Naar de inhoud
+        </a>
+        <div className="xl:pl-48">
+        <div className="mx-auto min-h-full max-w-[1180px] bg-background lg:my-8 lg:border-[3px] lg:border-brand lg:p-[7px]">
+          <div className="flex min-h-full flex-col lg:border lg:border-brand">
+            <SiteHeader />
+            <main id="inhoud" className="flex-1">
+              {children}
+            </main>
+            <SiteFooter />
+          </div>
+          <div className="hidden h-1.5 bg-accent lg:block" aria-hidden />
+        </div>
+        </div>
         <SleadsBadge />
       </body>
     </html>

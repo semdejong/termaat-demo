@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --brand: #1d4ed8;
-  --brand-fg: #ffffff;
-  --accent: #f59e0b;
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --muted: #f1f5f9;
+  --brand: #102e52;
+  --brand-fg: #fafaf6;
+  --accent: #f8d629;
+  --background: #fafaf6;
+  --foreground: #102e52;
+  --muted: #e5e9ec;
+  --ink-soft: #243e5c;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -16,11 +18,77 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-ink-soft: var(--ink-soft);
+  --font-sans: var(--font-source), "Source Sans 3", sans-serif;
+  --font-display: var(--font-barlow), "Barlow Condensed", sans-serif;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+}
+
+html {
+  scroll-padding-top: 8.5rem;
 }
 
 body {
-  background: var(--background);
+  background: var(--muted);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--accent);
+}
+
+::selection {
+  background: var(--brand);
+  color: var(--brand-fg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
