@@ -1,102 +1,55 @@
 /**
- * ÉÉN bestand om aan te passen per demo.
- * Kopieer de starter, vul hieronder de gegevens van de prospect in, klaar.
+ * SchilderTERMAAT / Schildersbedrijf A.F. ter Maat — Halle
+ * data-demo slug for Sleads analytics tracker
  */
 export const content = {
-  // Slug = Vercel-project- en GitHub-reponaam (eindigt op "-demo"). Wordt door scripts/new-demo.sh gezet.
-  // Ook de "data-demo" voor de Sleads demo-analytics tracker.
   slug: "termaat-demo",
 
   company: {
-    name: "Voorbeeldbedrijf",
-    tagline: "Vakmanschap uit de regio, sinds 1998",
+    name: "SchilderTERMAAT",
+    legalName: "Schildersbedrijf A.F. ter Maat",
+    tagline: "Schilderwerk op maat",
     description:
-      "Wij helpen particulieren en bedrijven met betrouwbaar werk, eerlijk advies en een persoonlijke aanpak.",
-    logo: "/logo.png", // zet het logo in /public en pas het pad aan ("" = alleen tekst)
-    city: "Utrecht",
+      "Schildersbedrijf A.F. ter Maat in Halle (Achterhoek) bestaat sinds 1961. Wij staan voor kwalitatief goed schilderwerk, op basis van duidelijke afspraken, een overzichtelijke offerte en ruime ervaring in het schildersvak.",
+    logo: "/logo.png",
+    city: "Halle",
+    region: "Achterhoek",
   },
 
-  // Huisstijlkleuren van de prospect (hex)
   colors: {
-    primary: "#1d4ed8",
-    primaryForeground: "#ffffff",
-    accent: "#f59e0b",
-    background: "#ffffff",
-    foreground: "#0f172a",
-    muted: "#f1f5f9",
+    primary: "#102E52",
+    primaryForeground: "#FAFAF6",
+    accent: "#F8D629",
+    background: "#FAFAF6",
+    foreground: "#102E52",
+    muted: "#E5E9EC",
   },
 
   seo: {
-    title: "Voorbeeldbedrijf | Vakmanschap uit Utrecht",
-    description: "Conceptwebsite voor Voorbeeldbedrijf.",
+    title: "SchilderTERMAAT | Schildersbedrijf A.F. ter Maat in Halle",
+    description:
+      "Schilderwerk, wandafwerking en beglazing in Halle en de Achterhoek. Sinds 1961. Vrijblijvende offerte: 0314-631420.",
     lang: "nl",
   },
 
+  phones: [{ kind: "Telefoon", label: "0314-631420", href: "tel:+31314631420" }],
+  email: "info@schildertermaat.nl",
+  address: {
+    street: "Dorpsstraat 73",
+    postal: "7025 AB",
+    city: "Halle",
+    lines: ["Dorpsstraat 73", "7025 AB Halle"],
+  },
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Dorpsstraat+73%2C+7025+AB+Halle",
+  kvk: "09029026",
+  since: "1961",
   nav: [
-    { label: "Diensten", href: "#diensten" },
-    { label: "Over ons", href: "#over-ons" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "Contact", href: "#contact" },
+    { label: "Schilderwerk", href: "/schilderwerk" },
+    { label: "Wandafwerking", href: "/wandafwerking" },
+    { label: "Beglazing", href: "/beglazing" },
+    { label: "Referenties", href: "/referenties" },
+    { label: "Over ons", href: "/over-ons" },
+    { label: "Contact", href: "/contact" },
   ],
-
-  hero: {
-    title: "Vakwerk waar u op kunt bouwen",
-    subtitle:
-      "Snel geregeld, duidelijk geprijsd en netjes opgeleverd. Vraag vandaag nog vrijblijvend een offerte aan.",
-    primaryCta: { label: "Offerte aanvragen", href: "#contact" },
-    secondaryCta: { label: "Bekijk onze diensten", href: "#diensten" },
-    image: "", // bv. "/hero.jpg" in /public of een externe URL; leeg = kleurverloop
-    highlights: ["25+ jaar ervaring", "Gratis advies aan huis", "Garantie op al ons werk"],
-  },
-
-  services: {
-    title: "Onze diensten",
-    intro: "Alles onder één dak, van eerste advies tot oplevering.",
-    items: [
-      { icon: "🛠️", title: "Dienst één", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-      { icon: "📐", title: "Dienst twee", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-      { icon: "✅", title: "Dienst drie", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-    ],
-  },
-
-  about: {
-    title: "Over ons",
-    text: [
-      "Wat begon als een klein familiebedrijf is uitgegroeid tot een vertrouwd adres in de regio.",
-      "We werken met vaste vakmensen, houden ons aan afspraken en staan ook na de oplevering voor u klaar.",
-    ],
-    image: "", // optioneel
-    stats: [
-      { value: "25+", label: "jaar ervaring" },
-      { value: "1.200+", label: "tevreden klanten" },
-      { value: "9,2", label: "gemiddeld cijfer" },
-    ],
-  },
-
-  reviews: {
-    title: "Wat klanten zeggen",
-    items: [
-      { name: "Familie Jansen", text: "Netjes en snel gewerkt, precies volgens afspraak. Echt een aanrader!", rating: 5 },
-      { name: "Petra de Vries", text: "Duidelijke communicatie en een eerlijke prijs. We komen zeker terug.", rating: 5 },
-      { name: "Mark Bakker", text: "Vakkundig advies en mooi resultaat. Heel tevreden.", rating: 5 },
-    ],
-  },
-
-  contact: {
-    title: "Neem contact op",
-    text: "Bel, mail of kom langs. We reageren binnen één werkdag.",
-    phone: "030 123 45 67",
-    email: "info@voorbeeldbedrijf.nl",
-    address: "Voorbeeldstraat 1, 1234 AB Utrecht",
-    openingHours: ["Ma t/m vr: 08:00 – 17:30", "Za: 09:00 – 13:00"],
-    whatsapp: "", // bv. "31612345678" (zonder +)
-    cta: { label: "Bel direct", href: "tel:0301234567" },
-  },
-
-  footer: {
-    kvk: "", // bv. "KvK 12345678"
-    socials: [] as { label: string; href: string }[],
-  },
 };
-
-export type Content = typeof content;
