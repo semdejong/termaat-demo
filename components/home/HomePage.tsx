@@ -2,6 +2,7 @@ import { content } from "@/content";
 import { ActionRow, TextLink } from "@/components/site/Actions";
 import { ContactBlock } from "@/components/site/ContactBlock";
 import { Faq } from "@/components/site/Faq";
+import { GalleryWall } from "@/components/site/GalleryWall";
 import { PhotoFrame } from "@/components/site/PhotoFrame";
 
 export function HomePage() {
@@ -153,14 +154,43 @@ export function HomePage() {
       </section>
 
       <section data-section="over-ons" className="border-t-2 border-brand px-6 py-16 lg:px-12 lg:py-20">
-        <h2 className="max-w-[14ch] text-[2.25rem] sm:text-[3rem]">{home.about.title}</h2>
-        <div className="mt-4 max-w-[40rem] space-y-4">
-          {home.about.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <p className="text-ink-soft">Sinds</p>
+            <p className="font-display text-[6.5rem] leading-none text-brand">1961</p>
+            <div className="mt-4 h-1.5 w-16 bg-accent" aria-hidden />
+            <p className="mt-4">Halle, Achterhoek</p>
+          </div>
+          <div className="lg:col-span-8">
+            <h2 className="max-w-[14ch] text-[2.25rem] sm:text-[3rem]">{home.about.title}</h2>
+            <div className="mt-4 max-w-[40rem] space-y-4">
+              {home.about.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            <div className="mt-6">
+              <TextLink href="/over-ons">{home.about.link}</TextLink>
+            </div>
+          </div>
         </div>
-        <div className="mt-6">
-          <TextLink href="/over-ons">{home.about.link}</TextLink>
+      </section>
+
+      <section data-section="binnenwerk" className="border-t-2 border-brand px-6 py-16 lg:px-12 lg:py-20">
+        <h2 className="max-w-[14ch] text-[2.25rem] sm:text-[3rem]">Van deur tot trap</h2>
+        <p className="mt-4 max-w-[40rem] text-ink-soft">
+          Particulier binnenschilderwerk: deuren, een strook figuurglas, geschilderde wanden en een trap.
+        </p>
+        <div className="mt-10">
+          <GalleryWall
+            items={[
+              { photo: content.photos.binnendeur, span: "lg:col-span-4", sizes: "(min-width: 1024px) 360px, 100vw" },
+              { photo: content.photos.deurGlas, span: "lg:col-span-4", sizes: "(min-width: 1024px) 360px, 100vw" },
+              { photo: content.photos.trap, span: "lg:col-span-4", sizes: "(min-width: 1024px) 360px, 100vw" },
+            ]}
+          />
+        </div>
+        <div className="mt-8">
+          <TextLink href="/referenties">Alle foto&apos;s bekijken</TextLink>
         </div>
       </section>
 

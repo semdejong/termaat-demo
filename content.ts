@@ -322,7 +322,7 @@ export const content = {
       ],
     },
     btw: "Op schilderwerk, binnen en buiten, aan woningen ouder dan 2 jaar van particuliere opdrachtgevers, mogen wij 9% btw berekenen.",
-    photos: [photos.gevelAanbouw, photos.binnendeur, photos.deurGlas, photos.trap],
+    photos: [photos.gevelAanbouw, photos.venster, photos.binnendeur, photos.deurGlas, photos.deurTegel, photos.trap],
     faq: [
       {
         question: "Kunt u houtrot herstellen?",
@@ -356,7 +356,7 @@ export const content = {
       { title: "Muurverf", text: "Zeer goed reinigbare hoogwaardige muurverven." },
       { title: "Behang", text: "De wanden voorzien van nieuw behang." },
       { title: "Vinylbehang", text: "Een afwerking met vinylbehang." },
-      { title: "Vliesbehang", text: "Vliesbehang." },
+      { title: "Vliesbehang", text: "De wanden voorzien van vliesbehang." },
       {
         title: "Glasvezelbehang",
         text: "Glasvezelbehang, en daarna afwerken met een muurverf.",
@@ -364,8 +364,26 @@ export const content = {
     ],
     systexx:
       "Wij maken veel gebruik van Systexx, een hoogwaardig glasweefsel van Vitrulan.",
+    together:
+      "De wand hoort bij het schilderwerk van deuren en kozijnen. Beglazing vraagt u bij hetzelfde bedrijf aan. Na het offertetraject geven wij graag een kleuradvies.",
     photos: [photos.venster, photos.trap],
     close: "Wilt u meer informatie? Bel 0314-631420 of mail info@schildertermaat.nl voor een vrijblijvende offerte.",
+    faq: [
+      {
+        question: "Welke wandafwerking voert u uit?",
+        answer:
+          "Zeer goed reinigbare hoogwaardige muurverven, behang, vinylbehang, vliesbehang en glasvezelbehang. Glasvezelbehang werken wij daarna af met een muurverf. Voor glasweefsel maken wij veel gebruik van Systexx van Vitrulan.",
+      },
+      {
+        question: "Werkt u in woning en kantoor?",
+        answer: "Ja. De wanden van uw woning of kantoor kunnen op deze manieren afgewerkt worden.",
+      },
+      {
+        question: "Hoe vraag ik meer informatie?",
+        answer:
+          "Bel 0314-631420 of mail info@schildertermaat.nl. Wij maken graag een vrijblijvende offerte. Het formulier opent uw e-mailprogramma. Er wordt niets automatisch verzonden.",
+      },
+    ] satisfies FaqItem[],
   },
 
   beglazing: {
@@ -380,7 +398,37 @@ export const content = {
     notice:
       "Glasschade? Wij hanteren geen 24-uursservice, maar garanderen wel een spoedig herstel.",
     advice: "Bel voor een vrijblijvend advies: 0314-631420. Per e-mail kan dat ook, via info@schildertermaat.nl.",
-    photos: [photos.gevelAanbouw, photos.terrasGlas],
+    types: [
+      "Traditionele beglazing",
+      "Hoog-rendements isolerende beglazing",
+      "Enkel glas",
+      "Figuurglas",
+      "Glaswanden",
+      "Schuifpuien",
+      "Voorzetramen",
+    ],
+    comfort: [
+      "De hoge energieprijzen en uw wooncomfort maken de montage van dubbel glas voor uw hele huis interessant.",
+      "Isolatie voorkomt koude trek bij de ramen en is geluidwerend.",
+      "Dubbel glas heeft daarnaast een inbraakwerend aspect.",
+      "Wij plaatsen het glas volgens NEN-norm en KOMO.",
+    ],
+    photos: [photos.gevelAanbouw, photos.terrasGlas, photos.deurGlas],
+    faq: [
+      {
+        question: "Welk glas plaatst u?",
+        answer:
+          "Traditionele en hoog-rendements isolerende beglazing, enkel glas, figuurglas, glaswanden, schuifpuien en voorzetramen. Wij plaatsen het glas veilig en professioneel.",
+      },
+      {
+        question: "Is er een 24-uursservice bij glasschade?",
+        answer: "Nee. Wij hanteren geen 24-uursservice. Wij garanderen wel een spoedig herstel.",
+      },
+      {
+        question: "Hoe vraag ik een vrijblijvend advies?",
+        answer: "Bel 0314-631420 of mail info@schildertermaat.nl. Het formulier opent uw e-mailprogramma. Er wordt niets automatisch verzonden.",
+      },
+    ] satisfies FaqItem[],
   },
 
   referenties: {
@@ -413,6 +461,9 @@ export const content = {
       "Wij zorgen niet alleen voor goed schilderwerk, maar ook voor de veiligheid in en om de woning wanneer wij onze werkzaamheden bij u uitvoeren. Op deze manier kunt u tijdens onze werkzaamheden met een gerust gevoel uw gang gaan en zullen wij de overlast tot een minimum beperken.",
       "Schildersbedrijf A.F. ter Maat werkt met name voor particulieren in de regio Achterhoek.",
     ],
+    place: "Het bedrijf staat aan de Dorpsstraat 73 in Halle. Van daaruit werken wij met name voor particulieren in de regio Achterhoek.",
+    safety:
+      "Tijdens het werk zorgen wij voor de veiligheid in en om de woning. U kunt uw gang gaan. De overlast beperken wij tot een minimum. Voor het buitenschilderwerk hebben wij eigen klimmaterialen: een zelfrijdende hoogwerker en steigers, die voldoen aan de vastgestelde veiligheidsnorm van vandaag. De verantwoording voor veilig werken ligt voor een deel bij de opdrachtgever.",
   },
 
   contactPage: {
@@ -422,6 +473,13 @@ export const content = {
     composerTitle: "Offerte per e-mail opstellen",
     composerText:
       "Vul de gegevens in. De knop opent uw e-mailprogramma met een bericht aan info@schildertermaat.nl. Er wordt niets automatisch verzonden. U verstuurt de e-mail zelf.",
+    mention: [
+      { title: "Het werk", text: "Schilderwerk, wandafwerking, beglazing, of een combinatie daarvan." },
+      { title: "Postcode en plaats", text: "De postcode en de plaats van het werk." },
+      { title: "Een omschrijving", text: "Wat er gedaan moet worden: kozijnen, deuren, wanden, glas of houtrot." },
+      { title: "Hoe wij u bereiken", text: "Uw naam, en een telefoonnummer of e-mailadres." },
+    ],
+    photo: photos.gevelAanbouw,
   },
 };
 

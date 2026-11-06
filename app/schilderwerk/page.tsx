@@ -69,6 +69,27 @@ export default function SchilderwerkPage() {
         </div>
       </section>
 
+      <section data-section="samen" className="border-t-2 border-brand px-6 py-16 lg:px-12 lg:py-20">
+        <h2 className="max-w-[16ch] text-[2.25rem] sm:text-[3rem]">In hetzelfde gesprek</h2>
+        <p className="mt-4 max-w-[40rem]">
+          Schilderen, houtrot, wanden en glas vraagt u bij hetzelfde bedrijf aan. Na het offertetraject geven wij graag een kleuradvies.
+        </p>
+        <div className="mt-8 border-[3px] border-brand p-1.5">
+          <div className="grid gap-px bg-brand lg:grid-cols-2">
+            <a href="/wandafwerking" className="bg-background px-6 py-8">
+              <div className="h-3 w-3 bg-accent" aria-hidden />
+              <h3 className="mt-4 text-[1.75rem]">Wandafwerking</h3>
+              <p className="mt-3 text-ink-soft">Muurverf, behang, vinylbehang, vliesbehang, glasvezelbehang en Systexx.</p>
+            </a>
+            <a href="/beglazing" className="bg-background px-6 py-8">
+              <div className="h-3 w-3 bg-accent" aria-hidden />
+              <h3 className="mt-4 text-[1.75rem]">Beglazing</h3>
+              <p className="mt-3 text-ink-soft">Isolerend glas, enkel glas, figuurglas, glaswanden, schuifpuien en voorzetramen. Geen 24-uursservice.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
       <Faq title="Vragen over schilderwerk" items={page.faq} />
       <QuoteComposer
         email={content.email}
