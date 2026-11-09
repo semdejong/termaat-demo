@@ -74,7 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Naar de inhoud
         </a>
-        <div className="xl:pl-48">
+        <div className="lg:px-8">
         <div className="mx-auto min-h-full max-w-[1180px] bg-background lg:my-8 lg:border-[3px] lg:border-brand lg:p-[7px]">
           <div className="flex min-h-full flex-col lg:border lg:border-brand">
             <SiteHeader />
