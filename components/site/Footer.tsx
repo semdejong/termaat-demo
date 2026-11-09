@@ -5,7 +5,7 @@ import { content } from "@/content";
 export function SiteFooter() {
   const services = content.nav.filter((item) => item.href !== "/");
   return (
-    <footer data-section="footer" className="bg-brand px-6 py-12 text-brand-fg lg:px-12">
+    <footer data-section="footer" className="border-t-[6px] border-accent bg-brand px-6 py-12 text-brand-fg lg:px-12">
       <div className="grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <p className="text-[2rem] leading-none">{content.company.legalName}</p>

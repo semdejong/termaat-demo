@@ -40,11 +40,11 @@ export default function OverOnsPage() {
         <div className="mt-10 border-[3px] border-brand p-1.5">
           <div className="grid gap-px bg-brand lg:grid-cols-3">
             {content.home.services.items.map((item) => (
-              <a key={item.href} href={item.href} className="bg-background px-6 py-8">
+              <a key={item.href} href={item.href} className="flex h-full flex-col bg-background px-6 py-8">
                 <div className="h-3 w-3 bg-accent" aria-hidden />
                 <h3 className="mt-4 text-[1.85rem]">{item.title}</h3>
                 <p className="mt-3 text-ink-soft">{item.text}</p>
-                <span className="mt-6 inline-flex min-h-11 items-center underline decoration-brand/40 underline-offset-4">{item.link}</span>
+                <span className="mt-auto inline-flex min-h-11 items-center pt-6 underline decoration-brand/40 underline-offset-4">{item.link}</span>
               </a>
             ))}
           </div>
@@ -59,8 +59,8 @@ export default function OverOnsPage() {
         <div className="mt-10">
           <GalleryWall
             items={[
-              { photo: content.photos.gevelAanbouw, span: "lg:col-span-7", sizes: "(min-width: 1024px) 640px, 100vw" },
-              { photo: content.photos.venster, span: "lg:col-span-5", sizes: "(min-width: 1024px) 460px, 100vw" },
+              { photo: content.photos.gevelAanbouw, span: "lg:col-span-6", sizes: "(min-width: 1024px) 520px, 100vw" },
+              { photo: content.photos.venster, span: "lg:col-span-6", sizes: "(min-width: 1024px) 520px, 100vw" },
             ]}
           />
         </div>

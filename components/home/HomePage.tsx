@@ -30,9 +30,10 @@ export function HomePage() {
         </div>
       </section>
 
-      <p data-section="krediet" className="bg-brand px-6 py-6 text-brand-fg lg:px-12">
-        {home.credibility}
-      </p>
+      <div data-section="krediet">
+        <p className="bg-brand px-6 py-6 text-brand-fg lg:px-12">{home.credibility}</p>
+        <div className="h-1.5 bg-accent" aria-hidden />
+      </div>
 
       <section data-section="diensten" className="px-6 py-16 lg:px-12 lg:py-20">
         <h2 className="max-w-[16ch] text-[2.25rem] sm:text-[3rem]">{home.services.title}</h2>
@@ -41,12 +42,12 @@ export function HomePage() {
           {home.services.items.map((item, index) => (
             <article
               key={item.href}
-              className={`border-brand px-5 py-8 sm:px-6 ${index < home.services.items.length - 1 ? "border-b-2 lg:border-b-0 lg:border-r-2" : ""} ${index === 0 ? "lg:col-span-5" : index === 1 ? "lg:col-span-4" : "lg:col-span-3"}`}
+              className={`flex flex-col border-brand px-5 py-8 sm:px-6 ${index < home.services.items.length - 1 ? "border-b-2 lg:border-b-0 lg:border-r-2" : ""} ${index === 0 ? "lg:col-span-5" : index === 1 ? "lg:col-span-4" : "lg:col-span-3"}`}
             >
               <div className="h-3 w-3 bg-accent" aria-hidden />
               <h3 className="mt-4 text-[2rem]">{item.title}</h3>
               <p className="mt-4 text-ink-soft">{item.text}</p>
-              <div className="mt-6 flex flex-col items-start">
+              <div className="mt-auto flex flex-col items-start pt-6">
                 <TextLink href={item.href}>{item.link}</TextLink>
                 <a href={phone.href} data-cta="bellen" className="inline-flex min-h-11 items-center underline decoration-brand/35 underline-offset-4">
                   Bel {phone.label}
@@ -118,7 +119,7 @@ export function HomePage() {
 
       <section data-section="beglazing" className="border-t-2 border-brand px-6 py-16 lg:px-12 lg:py-20">
         <div className="grid items-start gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-8">
             <h2 className="text-[2.25rem] sm:text-[3rem]">{home.glazing.title}</h2>
             <div className="mt-4 max-w-[40rem] space-y-4">
               {home.glazing.paragraphs.map((paragraph) => (
@@ -131,8 +132,8 @@ export function HomePage() {
               <ActionRow />
             </div>
           </div>
-          <div className="lg:col-span-5">
-            <PhotoFrame photo={home.glazing.photo} sizes="(min-width: 1024px) 420px, 100vw" />
+          <div className="lg:col-span-4">
+            <PhotoFrame photo={home.glazing.photo} sizes="(min-width: 1024px) 340px, 100vw" />
           </div>
         </div>
       </section>
@@ -142,8 +143,8 @@ export function HomePage() {
         <p className="mt-4 max-w-[40rem]">{home.begin.intro}</p>
         <ol className="mt-10 border-t-2 border-brand lg:grid lg:grid-cols-4 lg:border-t-2">
           {home.begin.steps.map((step) => (
-            <li key={step.title} className="border-b border-brand/30 py-6 lg:border-b-0 lg:border-l-2 lg:border-brand lg:px-5 lg:first:border-l-0 lg:first:pl-0">
-              <p className="text-[1.75rem]">{step.title}</p>
+            <li key={step.title} className="flex h-full flex-col border-b border-brand/30 py-6 lg:border-b-0 lg:border-l-2 lg:border-brand lg:px-5 lg:first:border-l-0 lg:first:pl-0">
+              <p className="text-[1.75rem] leading-tight lg:min-h-[2.4em]">{step.title}</p>
               <p className="mt-3 text-ink-soft">{step.text}</p>
             </li>
           ))}

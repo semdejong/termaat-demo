@@ -4,6 +4,7 @@ import { ActionRow, TextLink } from "@/components/site/Actions";
 import { Faq } from "@/components/site/Faq";
 import { GalleryWall } from "@/components/site/GalleryWall";
 import { PageHero } from "@/components/site/PageHero";
+import { PhotoFrame } from "@/components/site/PhotoFrame";
 import { QuoteComposer } from "@/components/site/QuoteComposer";
 
 export const metadata: Metadata = {
@@ -33,9 +34,12 @@ export default function BeglazingPage() {
         <div className="mt-10 border-[3px] border-brand p-1.5">
           <div className="grid gap-px bg-brand lg:grid-cols-12">
             {page.types.map((type, index) => (
-              <article key={type} className={`bg-background px-5 py-8 ${typeSpans[index]}`}>
+              <article key={type} className={`flex h-full flex-col bg-background px-5 pt-8 ${typeSpans[index]}`}>
                 <div className="h-3 w-3 bg-accent" aria-hidden />
                 <h3 className="mt-4 text-[1.65rem] leading-tight">{type}</h3>
+                <div className="mt-auto pt-8" aria-hidden>
+                  <div className="-mx-5 h-1.5 bg-accent" />
+                </div>
               </article>
             ))}
           </div>
@@ -69,10 +73,20 @@ export default function BeglazingPage() {
         <div className="mt-10">
           <GalleryWall
             items={[
-              { photo: content.photos.gevelAanbouw, span: "lg:col-span-8", sizes: "(min-width: 1024px) 720px, 100vw" },
-              { photo: content.photos.deurGlas, span: "lg:col-span-4", sizes: "(min-width: 1024px) 360px, 100vw" },
+              { photo: content.photos.gevelAanbouw, span: "lg:col-span-12", sizes: "(min-width: 1024px) 1040px, 100vw" },
             ]}
           />
+        </div>
+        <div className="mt-12 grid items-start gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <PhotoFrame photo={content.photos.deurGlas} sizes="(min-width: 1024px) 340px, 100vw" />
+          </div>
+          <div className="lg:col-span-7 lg:col-start-6 lg:pt-4">
+            <h3 className="text-[2rem]">Figuurglas in de deur</h3>
+            <p className="mt-4 max-w-[36rem]">
+              Een lichte binnendeur met een strook figuurglas in het bovenlicht. Figuurglas plaatsen wij naast enkel glas, glaswanden, schuifpuien en voorzetramen.
+            </p>
+          </div>
         </div>
       </section>
 

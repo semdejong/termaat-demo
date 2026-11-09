@@ -27,7 +27,7 @@ export function SiteHeader() {
           >
             Bel
           </a>
-          <details className="relative lg:hidden">
+          <details className="lg:hidden">
             <summary className="flex min-h-11 cursor-pointer items-center gap-2 border-2 border-brand px-3 font-semibold">
               <span className="flex flex-col gap-1" aria-hidden>
                 <span className="h-0.5 w-5 bg-brand" />
@@ -38,10 +38,14 @@ export function SiteHeader() {
             </summary>
             <nav
               aria-label="Mobiel menu"
-              className="absolute right-0 z-50 mt-2 w-64 border-2 border-brand bg-background p-2"
+              className="absolute inset-x-0 top-full z-50 border-y-2 border-brand bg-background px-4 py-3"
             >
               <NavLinks items={content.nav} variant="stack" />
-              <a href={phone.href} data-cta="bellen" className="flex min-h-11 items-center px-3 font-semibold">
+              <a
+                href={phone.href}
+                data-cta="bellen"
+                className="flex min-h-11 items-center border-l-4 border-transparent px-3 font-semibold"
+              >
                 Bel {phone.label}
               </a>
             </nav>

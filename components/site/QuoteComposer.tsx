@@ -36,16 +36,17 @@ export function QuoteComposer({
     <section id="offerte" data-section="offerte" className="px-6 py-16 lg:px-12 lg:py-20">
       <div className="border-[3px] border-brand p-1.5">
         <div className="border border-brand px-5 py-8 sm:px-8">
-          <h2 className="text-[2.25rem] sm:text-[2.75rem]">{title}</h2>
+          <div className="h-3 w-3 bg-accent" aria-hidden />
+          <h2 className="mt-4 text-[2.25rem] sm:text-[2.75rem]">{title}</h2>
           <p className="mt-4 max-w-[40rem] text-ink-soft">{text}</p>
           <form
             onSubmit={onSubmit}
             action={`mailto:${email}`}
             method="post"
             encType="text/plain"
-            className="mt-8 grid max-w-xl gap-5"
+            className="mt-8 grid max-w-3xl gap-5 sm:grid-cols-2"
           >
-            <div>
+            <div className="sm:col-span-2">
               <label htmlFor={`${id}-dienst`} className="mb-1 block font-semibold">
                 Dienst
               </label>
@@ -63,7 +64,7 @@ export function QuoteComposer({
                 ))}
               </select>
             </div>
-            <div>
+            <div className="sm:col-span-2">
               <label htmlFor={`${id}-plaats`} className="mb-1 block font-semibold">
                 Postcode en plaats
               </label>
@@ -75,7 +76,7 @@ export function QuoteComposer({
                 className="min-h-11 w-full border-2 border-brand bg-background px-3"
               />
             </div>
-            <div>
+            <div className="sm:col-span-2">
               <label htmlFor={`${id}-omschrijving`} className="mb-1 block font-semibold">
                 Omschrijving van het werk
               </label>
@@ -111,7 +112,7 @@ export function QuoteComposer({
                 className="min-h-11 w-full border-2 border-brand bg-background px-3"
               />
             </div>
-            <div>
+            <div className="sm:col-span-2">
               <button
                 type="submit"
                 data-cta="offerte"

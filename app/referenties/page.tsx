@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { content } from "@/content";
 import { ActionRow, TextLink } from "@/components/site/Actions";
 import { GalleryWall } from "@/components/site/GalleryWall";
+import { PhotoFrame } from "@/components/site/PhotoFrame";
 
 export const metadata: Metadata = {
   title: content.referenties.title,
@@ -29,11 +30,21 @@ export default function ReferentiesPage() {
         <div className="mt-10">
           <GalleryWall
             items={[
-              { photo: buiten.photos[0], span: "lg:col-span-12", sizes: "(min-width: 1024px) 1080px, 100vw", priority: true },
-              { photo: buiten.photos[1], span: "lg:col-span-7", sizes: "(min-width: 1024px) 640px, 100vw" },
-              { photo: buiten.photos[2], span: "lg:col-span-5", sizes: "(min-width: 1024px) 440px, 100vw" },
+              { photo: buiten.photos[0], span: "lg:col-span-6", sizes: "(min-width: 1024px) 520px, 100vw", priority: true },
+              { photo: buiten.photos[1], span: "lg:col-span-6", sizes: "(min-width: 1024px) 520px, 100vw" },
             ]}
           />
+        </div>
+        <div className="mt-12 grid items-start gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <PhotoFrame photo={buiten.photos[2]} sizes="(min-width: 1024px) 420px, 100vw" />
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7 lg:pt-4">
+            <h3 className="text-[2rem]">Vanaf het terras</h3>
+            <p className="mt-4 max-w-[36rem]">
+              Kozijnen en glas van de aanbouw, gezien vanaf het terras.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -43,13 +54,23 @@ export default function ReferentiesPage() {
         <div className="mt-10">
           <GalleryWall
             items={[
-              { photo: binnen.photos[0], span: "lg:col-span-12", sizes: "(min-width: 1024px) 1080px, 100vw" },
-              { photo: binnen.photos[1], span: "lg:col-span-4", sizes: "(min-width: 1024px) 360px, 100vw" },
-              { photo: binnen.photos[2], span: "lg:col-span-4", sizes: "(min-width: 1024px) 360px, 100vw" },
-              { photo: binnen.photos[3], span: "lg:col-span-4", sizes: "(min-width: 1024px) 360px, 100vw" },
-              { photo: binnen.photos[4], span: "lg:col-span-12", sizes: "(min-width: 1024px) 720px, 50vw" },
+              { photo: binnen.photos[0], span: "lg:col-span-12", sizes: "(min-width: 1024px) 1040px, 100vw" },
+              { photo: binnen.photos[1], span: "lg:col-span-4", sizes: "(min-width: 1024px) 340px, 100vw" },
+              { photo: binnen.photos[2], span: "lg:col-span-4", sizes: "(min-width: 1024px) 340px, 100vw" },
+              { photo: binnen.photos[3], span: "lg:col-span-4", sizes: "(min-width: 1024px) 340px, 100vw" },
             ]}
           />
+        </div>
+        <div className="mt-12 grid items-start gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <PhotoFrame photo={binnen.photos[4]} sizes="(min-width: 1024px) 420px, 100vw" />
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7 lg:pt-4">
+            <h3 className="text-[2rem]">De trap</h3>
+            <p className="mt-4 max-w-[36rem]">
+              Trap met geschilderde wanden, een houten leuning en een plafond.
+            </p>
+          </div>
         </div>
       </section>
 

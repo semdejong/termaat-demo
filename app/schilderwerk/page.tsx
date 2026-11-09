@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { content } from "@/content";
 import { ActionRow, TextLink } from "@/components/site/Actions";
 import { Faq } from "@/components/site/Faq";
+import { GalleryWall } from "@/components/site/GalleryWall";
 import { OnderhoudMark } from "@/components/site/OnderhoudMark";
 import { PageHero } from "@/components/site/PageHero";
-import { PhotoFrame } from "@/components/site/PhotoFrame";
 import { QuoteComposer } from "@/components/site/QuoteComposer";
 
 export const metadata: Metadata = {
@@ -20,10 +20,13 @@ export default function SchilderwerkPage() {
       <section data-section="uitleg" className="border-t-2 border-brand px-6 py-16 lg:px-12 lg:py-20">
         <div className="grid gap-10 lg:grid-cols-2">
           {page.blocks.map((block) => (
-            <article key={block.title} className="border-t-[3px] border-brand pt-5">
+            <article key={block.title} className="flex h-full flex-col border-t-[3px] border-brand pt-5">
               <div className="h-3 w-3 bg-accent" aria-hidden />
               <h2 className="mt-4 text-[2rem]">{block.title}</h2>
               <p className="mt-4 text-ink-soft">{block.text}</p>
+              <div className="mt-auto pt-6" aria-hidden>
+                <div className="h-1.5 w-14 bg-accent" />
+              </div>
             </article>
           ))}
         </div>
@@ -38,15 +41,14 @@ export default function SchilderwerkPage() {
         <p className="mt-4 max-w-[40rem] text-ink-soft">
           Buiten een opknapbeurt van muren, kozijnen en deuren. Binnen deuren, een kozijn en een trap.
         </p>
-        <div className="mt-10 grid gap-12 lg:grid-cols-2">
-          {page.photos.map((photo) => (
-            <PhotoFrame
-              key={photo.src}
-              photo={photo}
-              className={photo.width > photo.height ? "lg:col-span-2" : ""}
-              sizes={photo.width > photo.height ? "(min-width: 1024px) 1040px, 100vw" : "(min-width: 1024px) 480px, 100vw"}
-            />
-          ))}
+        <div className="mt-10">
+          <GalleryWall
+            items={page.photos.map((photo) => ({
+              photo,
+              span: photo.width > photo.height ? "lg:col-span-12" : "lg:col-span-6",
+              sizes: photo.width > photo.height ? "(min-width: 1024px) 1040px, 100vw" : "(min-width: 1024px) 520px, 100vw",
+            }))}
+          />
         </div>
         <div className="mt-8">
           <TextLink href="/referenties">Alle foto&apos;s op referenties</TextLink>

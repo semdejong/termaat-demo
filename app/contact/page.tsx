@@ -84,8 +84,8 @@ export default function ContactPage() {
         </p>
         <ol className="mt-10 border-t-2 border-brand lg:grid lg:grid-cols-4">
           {page.mention.map((item) => (
-            <li key={item.title} className="border-b border-brand/30 py-6 lg:border-b-0 lg:border-l-2 lg:border-brand lg:px-5 lg:first:border-l-0 lg:first:pl-0">
-              <p className="text-[1.65rem]">{item.title}</p>
+            <li key={item.title} className="flex h-full flex-col border-b border-brand/30 py-6 lg:border-b-0 lg:border-l-2 lg:border-brand lg:px-5 lg:first:border-l-0 lg:first:pl-0">
+              <p className="text-[1.65rem] leading-tight lg:min-h-[2.5em]">{item.title}</p>
               <p className="mt-3 text-ink-soft">{item.text}</p>
             </li>
           ))}

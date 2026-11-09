@@ -24,16 +24,19 @@ export default function WandafwerkingPage() {
         <div className="mt-10 border-[3px] border-brand p-1.5">
           <div className="grid gap-px bg-brand lg:grid-cols-12">
             {page.options.map((option, index) => (
-              <article key={option.title} className={`bg-background px-6 py-8 ${spans[index]}`}>
+              <article key={option.title} className={`flex h-full flex-col bg-background px-6 py-8 ${spans[index]}`}>
                 <div className="h-3 w-3 bg-accent" aria-hidden />
                 <h2 className="mt-4 text-[2rem]">{option.title}</h2>
                 <p className="mt-3 text-ink-soft">{option.text}</p>
+                <div className="mt-auto pt-8" aria-hidden>
+                  <div className="h-1.5 w-14 bg-accent" />
+                </div>
               </article>
             ))}
             <article className="bg-brand px-6 py-8 text-brand-fg lg:col-span-12">
               <h2 className="text-[2rem] text-brand-fg">Systexx van Vitrulan</h2>
               <p className="mt-3 max-w-[40rem] text-brand-fg">
-                {page.systexx}{" "}
+                {page.systexx.split(content.systexx.name)[0]}
                 <a
                   href={content.systexx.href}
                   target="_blank"
@@ -42,7 +45,7 @@ export default function WandafwerkingPage() {
                 >
                   {content.systexx.name}
                 </a>
-                .
+                {page.systexx.split(content.systexx.name)[1]}
               </p>
             </article>
           </div>
